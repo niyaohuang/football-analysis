@@ -120,10 +120,9 @@ function getUrlParam(param) {
 
 // 加载比赛数据
 async function loadMatchData() {
-  const matchId = getUrlParam('id');
+  let matchId = getUrlParam('id');
   if (!matchId) {
-    document.getElementById('matchTitle').textContent = '错误：缺少比赛ID';
-    return;
+    matchId = 1; // 默认加载第一场比赛
   }
   
   try {
