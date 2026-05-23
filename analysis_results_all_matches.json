@@ -1,0 +1,489 @@
+[
+  {
+    "match_id": 1,
+    "home_team": "AFC Bournemouth",
+    "away_team": "Leeds United FC",
+    "home_score": 2,
+    "away_score": 2,
+    "match_date": "2026-04-22T19:00:00",
+    "european_odds": {
+      "home_win_odds": 2.64,
+      "draw_odds": 4.12,
+      "away_win_odds": 3.04,
+      "bookmaker": "Calculated-V2",
+      "timestamp": "2026-05-23T15:58:28.954888",
+      "calculation_details": {
+        "home_score": 57.79,
+        "away_score": 50.3,
+        "home_points": 59,
+        "away_points": 47,
+        "home_goals_per_game": 1.54,
+        "away_goals_per_game": 1.32,
+        "home_defense": 1.43,
+        "away_defense": 1.43,
+        "home_form_score": 53.15,
+        "away_form_score": 42.34,
+        "h2h_advantage": 50.0
+      }
+    },
+    "over_under": {
+      "over_under_line": 3.5,
+      "over_odds": 1.55,
+      "under_odds": 3.28,
+      "expected_goals": 3.5,
+      "home_expected": 2.1,
+      "away_expected": 1.4,
+      "bookmaker": "Calculated-V2",
+      "timestamp": "2026-05-23T15:58:28.968886",
+      "calculation_details": {
+        "home_goals_per_game": 1.54,
+        "away_goals_per_game": 1.32,
+        "home_home_goals_per_game": 2.0,
+        "away_away_goals_per_game": 1.5,
+        "home_recent_goals_per_game": 3.13,
+        "away_recent_goals_per_game": 2.5,
+        "home_defense_per_game": 1.43,
+        "away_defense_per_game": 1.43
+      }
+    },
+    "asian_handicap": {
+      "handicap": -1.25,
+      "home_odds": 2.01,
+      "away_odds": 1.89,
+      "bookmaker": "Calculated-V2",
+      "timestamp": "2026-05-23T15:58:28.977884",
+      "calculation_details": {
+        "total_score": 24.91,
+        "points_diff": 12,
+        "attack_diff": 0.22,
+        "defense_diff": 0.0,
+        "form_diff": 10.81,
+        "home_away_performance_diff": 33.33,
+        "h2h_diff": 0.0
+      }
+    },
+    "kelly_index": {
+      "fixture_id": 1,
+      "kelly_index": {
+        "home": -0.0723,
+        "draw": 0.0308,
+        "away": 0.0096
+      },
+      "value_bets": [
+        {
+          "outcome": "draw",
+          "kelly": 0.03082766935096226,
+          "odds": 3.727439882571785,
+          "recommendation": "buy"
+        },
+        {
+          "outcome": "away",
+          "kelly": 0.009649515518730417,
+          "odds": 2.378155933350734,
+          "recommendation": "buy"
+        }
+      ],
+      "has_value": true,
+      "best_value": {
+        "outcome": "draw",
+        "kelly": 0.03082766935096226,
+        "odds": 3.727439882571785,
+        "recommendation": "buy"
+      },
+      "timestamp": "2026-05-23T15:58:28.977884"
+    },
+    "hot_cold_index": {
+      "home": 0.7669,
+      "draw": 1.0886,
+      "away": 1.85,
+      "method": "simulated",
+      "interpretation": {
+        "home": "偏冷",
+        "draw": "正常",
+        "away": "过热"
+      }
+    },
+    "betfair_index": {
+      "fixture_id": 1,
+      "betfair_index": {
+        "home": 1.0266,
+        "draw": 0.4778,
+        "away": 0.4956
+      },
+      "money_percentage": {
+        "home": 0.5133,
+        "draw": 0.2389,
+        "away": 0.2478
+      },
+      "volume": {
+        "home": 77374,
+        "draw": 27358,
+        "away": 88579
+      },
+      "is_simulated": true,
+      "timestamp": "2026-05-23T14:00:00Z"
+    },
+    "odds_dispersion": {
+      "home": {
+        "mean": 2.08,
+        "std": 0.06,
+        "min": 2.0,
+        "max": 2.15,
+        "range": 0.15,
+        "coef_variation": 2.74,
+        "label": "主胜"
+      },
+      "draw": {
+        "mean": 3.41,
+        "std": 0.07,
+        "min": 3.3,
+        "max": 3.5,
+        "range": 0.2,
+        "coef_variation": 2.17,
+        "label": "平局"
+      },
+      "away": {
+        "mean": 3.65,
+        "std": 0.12,
+        "min": 3.5,
+        "max": 3.8,
+        "range": 0.3,
+        "coef_variation": 3.36,
+        "label": "客胜"
+      },
+      "overall_dispersion": 2.7566666666666664,
+      "anomalies": [],
+      "timestamp": "2026-05-23T15:58:28.978886",
+      "analysis": {
+        "overall_dispersion": 2.76,
+        "interpretation": "庄家意见较为一致",
+        "confidence": "medium",
+        "anomaly_count": 0,
+        "anomaly_impact": "low",
+        "recommendation": "庄家较为一致，选择主流赔率"
+      }
+    },
+    "odds_trend": {
+      "fixture_id": 1,
+      "initial_odds": {
+        "time": "2026-05-22T15:58:28.978886",
+        "home": 2.3,
+        "draw": 3.2,
+        "away": 3.2
+      },
+      "current_odds": {
+        "time": "2026-05-23T15:58:28.978886",
+        "home": 2.2199999999999998,
+        "draw": 3.3200000000000003,
+        "away": 3.4000000000000004
+      },
+      "changes": {
+        "home": {
+          "absolute": -0.08,
+          "percentage": -3.48,
+          "direction": "dropping"
+        },
+        "draw": {
+          "absolute": 0.12,
+          "percentage": 3.75,
+          "direction": "rising"
+        },
+        "away": {
+          "absolute": 0.2,
+          "percentage": 6.25,
+          "direction": "rising"
+        }
+      },
+      "money_flow": [
+        "home"
+      ],
+      "volatilty": 0.047,
+      "trend_strength": "strong",
+      "timestamp": "2026-05-23T15:58:28.978886",
+      "recommendation": "✅ 资金流向主队，主胜赔率下降，看好主队"
+    },
+    "bookmaker_comparison": {
+      "num_bookmakers": 5,
+      "bookmakers": [
+        "Pinnacle",
+        "Bet365",
+        "William Hill",
+        "Ladbrokes",
+        "10Bet"
+      ],
+      "average_odds": {
+        "home": 2.08,
+        "draw": 3.41,
+        "away": 3.65
+      },
+      "best_odds": {
+        "home": {
+          "bookmaker": "Ladbrokes",
+          "odds": 2.15
+        },
+        "draw": {
+          "bookmaker": "William Hill",
+          "odds": 3.5
+        },
+        "away": {
+          "bookmaker": "Pinnacle",
+          "odds": 3.8
+        }
+      },
+      "anomalies": [],
+      "comparison_table": [
+        {
+          "bookmaker": "Pinnacle",
+          "home": 2.0,
+          "draw": 3.45,
+          "away": 3.8,
+          "home_deviation": -3.85,
+          "draw_deviation": 1.17,
+          "away_deviation": 4.11
+        },
+        {
+          "bookmaker": "Bet365",
+          "home": 2.1,
+          "draw": 3.4,
+          "away": 3.6,
+          "home_deviation": 0.96,
+          "draw_deviation": -0.29,
+          "away_deviation": -1.37
+        },
+        {
+          "bookmaker": "William Hill",
+          "home": 2.05,
+          "draw": 3.5,
+          "away": 3.75,
+          "home_deviation": -1.44,
+          "draw_deviation": 2.64,
+          "away_deviation": 2.74
+        },
+        {
+          "bookmaker": "Ladbrokes",
+          "home": 2.15,
+          "draw": 3.3,
+          "away": 3.5,
+          "home_deviation": 3.37,
+          "draw_deviation": -3.23,
+          "away_deviation": -4.11
+        },
+        {
+          "bookmaker": "10Bet",
+          "home": 2.1,
+          "draw": 3.4,
+          "away": 3.6,
+          "home_deviation": 0.96,
+          "draw_deviation": -0.29,
+          "away_deviation": -1.37
+        }
+      ],
+      "timestamp": "2026-05-23T15:58:28.978886",
+      "analysis": {
+        "anomaly_count": 0,
+        "high_anomaly_count": 0,
+        "low_anomaly_count": 0,
+        "anomaly_analysis": "赔率分布较为均衡",
+        "best_odds": {
+          "home": {
+            "bookmaker": "Ladbrokes",
+            "odds": 2.15
+          },
+          "draw": {
+            "bookmaker": "William Hill",
+            "odds": 3.5
+          },
+          "away": {
+            "bookmaker": "Pinnacle",
+            "odds": 3.8
+          }
+        },
+        "recommendation": "✅ 最佳away赔率：Pinnacle (3.8)"
+      }
+    },
+    "large_transaction": {
+      "fixture_id": 1,
+      "large_transaction_count": 2,
+      "large_transactions": [
+        {
+          "time": "2026-05-22T18:58:28.978886",
+          "outcome": "home",
+          "amount": 50179,
+          "type": "back",
+          "matched": true
+        },
+        {
+          "time": "2026-05-22T20:58:28.978886",
+          "outcome": "draw",
+          "amount": 23815,
+          "type": "back",
+          "matched": true
+        }
+      ],
+      "smart_money_index": {
+        "home": 0.678149579695651,
+        "draw": 0.321850420304349,
+        "away": 0.0
+      },
+      "smart_money_detected": true,
+      "message": "检测到 2 笔大额交易",
+      "timestamp": "2026-05-23T15:58:28.978886",
+      "is_simulated": true
+    },
+    "market_sentiment": {
+      "fixture_id": 1,
+      "social_media": {
+        "count": 30,
+        "positive": 14,
+        "negative": 9,
+        "neutral": 7,
+        "positive_pct": 46.67,
+        "negative_pct": 30.0,
+        "neutral_pct": 23.33,
+        "index": 58.33
+      },
+      "news": {
+        "count": 10,
+        "positive": 2,
+        "negative": 6,
+        "neutral": 2,
+        "positive_pct": 20.0,
+        "negative_pct": 60.0,
+        "neutral_pct": 20.0,
+        "index": 30.0
+      },
+      "overall_index": 47.0,
+      "overreaction": {
+        "detected": true,
+        "type": "social_vs_news_divergence",
+        "divergence": 28.33,
+        "interpretation": "社交媒体与新闻情绪存在显著分歧，可能存在过度反应"
+      },
+      "interpretation": "市场情绪中性，无明显倾向",
+      "recommendation": "⚠️ 市场情绪分歧较大，建议观望或深入研究",
+      "timestamp": "2026-05-23T15:58:28.979884"
+    },
+    "motivation": {
+      "home": {
+        "score": 0.765974124871851,
+        "factors": [
+          "保级压力"
+        ],
+        "goal": "保级"
+      },
+      "away": {
+        "score": 0.8675267557178541,
+        "factors": [
+          "欧战资格"
+        ],
+        "goal": "欧战"
+      },
+      "difference": 0.10155263084600308,
+      "advantage": "away"
+    },
+    "injury": {
+      "home_injuries": {
+        "impact_score": -0.28371157356522786,
+        "injury_count": 4,
+        "severity": "medium"
+      },
+      "away_injuries": {
+        "impact_score": -0.17453128829499515,
+        "injury_count": 2,
+        "severity": "low"
+      },
+      "difference": 0.10918028527023271,
+      "advantage": "away"
+    },
+    "strength_rating": {
+      "home": {
+        "overall": 81.49031378284198,
+        "attack": 82.0,
+        "defense": 75.0,
+        "midfield": 78.5
+      },
+      "away": {
+        "overall": 78.45508903661934,
+        "attack": 78.0,
+        "defense": 80.0,
+        "midfield": 76.5
+      },
+      "difference": 3.0352247462226387,
+      "advantage": "home"
+    },
+    "form": {
+      "home": {
+        "form_score": 0.9948467771711991,
+        "form_string": "WWDLW",
+        "trend": "improving"
+      },
+      "away": {
+        "form_score": 0.7323057338004975,
+        "form_string": "WDLWD",
+        "trend": "stable"
+      },
+      "difference": 0.2625410433707016,
+      "advantage": "home"
+    },
+    "h2h": {
+      "h2h_summary": "两队历史交锋势均力敌",
+      "home_advantage": 0.1,
+      "away_advantage": -0.1,
+      "avg_goals": 3.49
+    },
+    "lineup": {
+      "home_lineup_strength": 7.24,
+      "away_lineup_strength": 9.24,
+      "difference": 2.0,
+      "advantage": "away",
+      "home_formation": "4-3-3",
+      "away_formation": "4-2-3-1",
+      "home_key_players_available": true,
+      "away_key_players_available": true
+    },
+    "player_form": {
+      "home_key_player_form": 7.23,
+      "away_key_player_form": 7.08,
+      "difference": 0.15,
+      "advantage": "home"
+    },
+    "match_importance": {
+      "home_importance": 6.1,
+      "away_importance": 5.97,
+      "overall_importance": 6.03,
+      "importance_level": "中等",
+      "match_type": "普通联赛",
+      "analysis": "主队重要性: 6.10, 客队重要性: 5.97, 比赛类型: 普通联赛"
+    },
+    "fixture_congestion": {
+      "home_congestion": 7.34,
+      "away_congestion": 7.75,
+      "home_level": "高",
+      "away_level": "极高",
+      "home_fatigue": 0.73,
+      "away_fatigue": 0.41,
+      "analysis": "主队密集度: 高, 客队密集度: 极高, 体能影响: 主队0.73, 客队0.41"
+    },
+    "weather": {
+      "weather_type": "多云",
+      "temperature": 23.6,
+      "precipitation": 89.2,
+      "wind_speed": 22.5,
+      "weather_impact": 3.32,
+      "impact_level": "轻微",
+      "style_impact": "天气条件良好，不影响正常发挥",
+      "analysis": "天气: 多云, 温度: 23.6°C, 降水: 89.2%, 风速: 22.5m/s, 影响: 轻微"
+    },
+    "referee": {
+      "referee_name": "安东尼·泰勒",
+      "yellow_cards_per_game": 5.45,
+      "red_cards_per_game": 0.37,
+      "penalties_per_game": 0.29,
+      "referee_bias": 0.22,
+      "bias_level": "轻微偏向主队",
+      "strictness": 2.38,
+      "strictness_level": "宽松",
+      "analysis": "裁判: 安东尼·泰勒, 倾向性: 轻微偏向主队, 严格程度: 宽松, 场均黄牌: 5.45"
+    }
+  }
+]
