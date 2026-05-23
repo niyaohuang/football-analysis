@@ -832,10 +832,12 @@ function renderBetfairChart(match) {
   });
 }
 
+
 // 页面加载时执行
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = function() {
   loadMatchData();
-});
+};
+
 </script>
 </body>
 </html>
