@@ -72,6 +72,11 @@ button{cursor:pointer;font:inherit}
       <div class="match-meta" id="matchMeta"></div>
     </div>
     <div class="match-result" id="matchResult"></div>
+    <div class="match-nav" id="matchNav" style="display:flex; gap:8px; margin-top:12px">
+      <button id="prevBtn" onclick="goToPrevMatch()" style="padding:6px 14px; border-radius:6px; border:1px solid var(--line); background:var(--surface-2); color:var(--text); font-weight:700; cursor:pointer">← 上一场</button>
+      <span id="matchCounter" style="display:flex; align-items:center; font-size:14px; color:var(--muted); font-weight:700"></span>
+      <button id="nextBtn" onclick="goToNextMatch()" style="padding:6px 14px; border-radius:6px; border:1px solid var(--line); background:var(--surface-2); color:var(--text); font-weight:700; cursor:pointer">下一场 →</button>
+    </div>
   </div>
   
   <div class="analysis-grid" id="analysisGrid">
@@ -112,6 +117,10 @@ if (savedTheme === 'light') {
   document.body.className = 'light';
 }
 
+// 全局变量
+let allMatches = [];
+let currentMatchIndex = 0;
+
 // 获取URL参数
 function getUrlParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -120,24 +129,32 @@ function getUrlParam(param) {
 
 // 加载比赛数据
 async function loadMatchData() {
-  let matchId = getUrlParam('id');
-  if (!matchId) {
-    matchId = 1; // 默认加载第一场比赛
-  }
-  
   try {
     const response = await fetch('analysis_results_all_matches.json');
     const data = await response.json();
-    const match = data.find(m => m.match_id == matchId);
+    allMatches = data; // 存储所有比赛数据
     
+    // 获取URL参数中的match_id
+    const matchId = getUrlParam('id');
+    
+    let match;
+    if (matchId) {
+      // 根据match_id查找比赛
+      match = allMatches.find(m => m.match_id == matchId);
+    }
+    
+    // 如果没找到，使用第一场比赛
     if (!match) {
-      document.getElementById('matchTitle').textContent = '错误：未找到比赛';
-      return;
+      match = allMatches[0];
+      currentMatchIndex = 0;
+    } else {
+      currentMatchIndex = allMatches.findIndex(m => m.match_id == match.match_id);
     }
     
     renderMatchDetail(match);
     renderAnalysisCards(match);
     renderCharts(match);
+    updateNavigation();
     
   } catch (error) {
     console.error('加载数据失败:', error);
@@ -832,6 +849,63 @@ function renderBetfairChart(match) {
   });
 }
 
+
+// 更新导航按钮状态
+function updateNavigation() {
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const counter = document.getElementById('matchCounter');
+  
+  if (prevBtn) {
+    prevBtn.disabled = currentMatchIndex <= 0;
+    prevBtn.style.opacity = currentMatchIndex <= 0 ? '0.5' : '1';
+    prevBtn.style.cursor = currentMatchIndex <= 0 ? 'not-allowed' : 'pointer';
+  }
+  
+  if (nextBtn) {
+    nextBtn.disabled = currentMatchIndex >= allMatches.length - 1;
+    nextBtn.style.opacity = currentMatchIndex >= allMatches.length - 1 ? '0.5' : '1';
+    nextBtn.style.cursor = currentMatchIndex >= allMatches.length - 1 ? 'not-allowed' : 'pointer';
+  }
+  
+  if (counter) {
+    counter.textContent = `第 ${currentMatchIndex + 1} 场 / 共 ${allMatches.length} 场`;
+  }
+}
+
+// 加载上一场比赛
+function goToPrevMatch() {
+  if (currentMatchIndex > 0) {
+    currentMatchIndex--;
+    const match = allMatches[currentMatchIndex];
+    renderMatchDetail(match);
+    renderAnalysisCards(match);
+    renderCharts(match);
+    updateNavigation();
+    
+    // 更新URL
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set('id', match.match_id);
+    window.history.pushState({}, '', newUrl);
+  }
+}
+
+// 加载下一场比赛
+function goToNextMatch() {
+  if (currentMatchIndex < allMatches.length - 1) {
+    currentMatchIndex++;
+    const match = allMatches[currentMatchIndex];
+    renderMatchDetail(match);
+    renderAnalysisCards(match);
+    renderCharts(match);
+    updateNavigation();
+    
+    // 更新URL
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set('id', match.match_id);
+    window.history.pushState({}, '', newUrl);
+  }
+}
 
 // 页面加载时执行
 window.onload = function() {
