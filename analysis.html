@@ -121,6 +121,51 @@ if (savedTheme === 'light') {
 let allMatches = [];
 let currentMatchIndex = 0;
 
+// 备用数据（当fetch失败时使用）
+const FALLBACK_DATA = [
+  {
+    "match_id": 1,
+    "home_team": "AFC Bournemouth",
+    "away_team": "Leeds United FC",
+    "home_score": 2,
+    "away_score": 2,
+    "match_date": "2026-04-22T19:00:00",
+    "european_odds": {
+      "home_win_odds": 2.64,
+      "draw_odds": 4.12,
+      "away_win_odds": 3.04
+    },
+    "over_under": {
+      "over_under_line": 3.5,
+      "over_odds": 1.55,
+      "under_odds": 3.28
+    },
+    "asian_handicap": {
+      "handicap": -1.25,
+      "home_odds": 2.01,
+      "away_odds": 1.89
+    },
+    "kelly_index": {
+      "kelly_index": {
+        "home": -0.0723,
+        "draw": 0.0308,
+        "away": 0.0096
+      }
+    },
+    "hot_cold_index": {
+      "home": 0.7669,
+      "draw": 1.0886,
+      "away": 1.85
+    },
+    "betfair_index": {
+      "market_id": "1",
+      "home_back": 2.64,
+      "draw_back": 4.12,
+      "away_back": 3.04
+    }
+  }
+];
+
 // 获取URL参数
 function getUrlParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -131,6 +176,9 @@ function getUrlParam(param) {
 async function loadMatchData() {
   try {
     const response = await fetch('analysis_results_all_matches.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const data = await response.json();
     allMatches = data; // 存储所有比赛数据
     
@@ -157,8 +205,18 @@ async function loadMatchData() {
     updateNavigation();
     
   } catch (error) {
-    console.error('加载数据失败:', error);
-    document.getElementById('matchTitle').textContent = '加载数据失败';
+    console.error('加载数据失败，使用备用数据:', error);
+    document.getElementById('matchTitle').textContent = '⚠️ 本地预览模式（数据不完整）';
+    
+    // 使用备用数据
+    allMatches = FALLBACK_DATA;
+    const match = allMatches[0];
+    currentMatchIndex = 0;
+    
+    renderMatchDetail(match);
+    renderAnalysisCards(match);
+    renderCharts(match);
+    updateNavigation();
   }
 }
 
